@@ -1,4 +1,4 @@
-import {lazy, useEffect, useState} from "react"
+import {useEffect, useState} from "react"
 
 import './App.css';
 import {Navbar, Container, Nav} from 'react-bootstrap';
