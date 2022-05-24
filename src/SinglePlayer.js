@@ -6,26 +6,35 @@ const sleep = (milliseconds) => {
 
 function SinglePlayer() {
     const imageRef = useRef()
-
+    let num = 2;
     async function wrongAnswer() {
         let rotator = imageRef.current,
-            dir = 'images/',
-            num = 2;
-        for (let i = 0; i < 5; i++) {
-            console.log(num);
-            rotator.src = dir + num + '.jpg';
-            await sleep(200)
-            num++;
+            dir = 'images/';
+        if (num < 22) {
+            for (let i = 0; i < 5; i++) {
+                console.log(num);
+                rotator.src = dir + num + '.jpg';
+                await sleep(200)
+                num++;
+            }
+        }
+        else {
+            
         }
     }
 
     return (
         <>
-            <button onClick={wrongAnswer}>hello</button>
-            <img ref={imageRef} src={"images/1.jpg"} alt="balloon-boy" style={{
-                width: "45%",
-                maxHeight: "100%"
-            }}/>
+            <div>
+                <button onClick={wrongAnswer}>hello</button>
+                <img ref={imageRef} src={"images/1.jpg"} alt="balloon-boy" style={{
+                    width: "45%",
+                    maxHeight: "100%"
+                }}/>
+            </div>
+            <div>
+                {/*grid of letters*/}
+            </div>
         </>
     )
 }
