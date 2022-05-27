@@ -2,10 +2,11 @@ import {useEffect, useState} from "react"
 
 import './App.css';
 import {Navbar, Container, Nav} from 'react-bootstrap';
-import SinglePlayer from "./SinglePlayer";
+// import SinglePlayer from "./SinglePlayer";
+import Game from "./components/Game"
 
 const routes = {
-    '#/single': <SinglePlayer/>
+    '#/single': <Game/>
 }
 
 function App() {
