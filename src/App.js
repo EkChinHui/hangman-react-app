@@ -4,9 +4,11 @@ import './App.css';
 import {Navbar, Container, Nav} from 'react-bootstrap';
 // import SinglePlayer from "./SinglePlayer";
 import Game from "./components/Game"
+import Instructions from "./components/Instructions"
 
 const routes = {
-    '#/single': <Game/>
+    '#/single': <Game/>,
+    '': <Instructions/>
 }
 
 function App() {
@@ -32,7 +34,6 @@ function App() {
                     <Navbar.Toggle aria-controls="basic-navbar-nav"/>
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="me-auto">
-                            <Nav.Link href="#home">Instructions</Nav.Link>
                             <Nav.Link href="#/single">Single Player</Nav.Link>
                         </Nav>
                     </Navbar.Collapse>

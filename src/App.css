@@ -3,7 +3,6 @@
 .App {
   text-align: center;
   background-color: #98d8ef;
-  height: 100vh;
 }
 
 .App-logo {
@@ -70,3 +69,12 @@ span.letter {
   font-size: 30px;
   color: white;
 }
+
+.wrong {
+  background-color: #de584b;
+}
+
+.correct {
+  background-color: #85d164;
+}
+

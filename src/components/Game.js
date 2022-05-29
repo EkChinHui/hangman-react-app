@@ -12,7 +12,6 @@ const words = ['hello', 'world', 'testing']
 // selects a random word from words
 let selectedWord = words[Math.floor(Math.random() * words.length)]
 console.log(selectedWord)
-let num = 2; // magic literals
 let alphabets = [...'ABCDEFGHIJKLMNOPQRSTUVWXYZ']
 
 
@@ -78,17 +77,12 @@ function Game() {
     async function wrongAnswer() {
         let rotator = imageRef.current,
             dir = 'images/';
-         
-        if (num < 37) {
-            for (let i = 0; i < 5; i++) {
-                console.log(num);
-                rotator.src = dir + num + '.jpg';
-                await sleep(200)
-                num++;
-            }
-        }
-        else {
-            
+        let num_wrong = wrongLetters.length;
+        let img_no = num_wrong * 5 + 2
+        for (let i = 0; i < 5; i++) {
+            rotator.src = dir + img_no + '.jpg';
+            await sleep(200);
+            img_no++;
         }
     }
 
@@ -96,20 +90,20 @@ function Game() {
 
     return (
         <>
-            <Container fluid className="">
+            <Container fluid>
                 <Row>
-                    <Col>                
-                    <img className="p-5" ref={imageRef} src={"images/1.jpg"} alt="balloon-boy" style={{
+                    <Col sm={12} md={12} lg={6}>                
+                    <img className="p-3" ref={imageRef} src={"images/1.jpg"} alt="balloon-boy" style={{
                         width: "45%",
                         maxHeight: "100%"
                         }}/>
                     <Word selectedWord={selectedWord} correctLetters={correctLetters}/>
                     
                     </Col>
-                    <Col>
+                    <Col sm={12} md={12} lg={6}>
                         <h3 id="instructions" className="p-4">Choose one of the alphabets below!</h3>
                         <Container>
-                            <Row className="g-0 mx-0 px-0 gx-0">
+                            <Row className="g-0 mx-0 px-0 gx-0" sm={4} md={6} lg={6}>
                                 {alphabets.map((letter, i) => 
                                     renderKeyboardButton(letter, i)
                                 )}

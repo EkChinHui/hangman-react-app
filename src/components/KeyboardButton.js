@@ -6,17 +6,17 @@ function KeyboardButton({letter, onClick, correctLetters, wrongLetters}) {
     function getColor() {
         let lowered = letter.toLowerCase()
         if (correctLetters.includes(lowered)) {
-            return "green";
+            return "correct";
         } else if (wrongLetters.includes(lowered)) {
-            return "red";
+            return "wrong";
         } else {
             return "";
         }
     }
 
     return (
-        <Col className="col-2 px-0 mx-0">
-            <div className="kbd-btn" onClick={onClick} style={{backgroundColor: getColor()}}>
+        <Col className="px-0 mx-0">
+            <div className={"kbd-btn " + getColor()} onClick={onClick}>
                 {letter}
             </div>
         </Col>
