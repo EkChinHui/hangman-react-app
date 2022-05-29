@@ -110,7 +110,7 @@ function Game() {
         <>
             <Container fluid className="pb-4" style={{background: "#9ed8ef"}}>
                 <Row>
-                    <Col sm={12} md={12} lg={6}>                
+                    <Col xs={12} sm={12} md={12} lg={6}>                
                     <img className="p-3" ref={imageRef} src={"images/1.jpg"} alt="balloon-boy" style={{
                         width: "45%",
                         minWidth: "160px",
@@ -121,10 +121,10 @@ function Game() {
                     {!playable && !isWin() && <h3 className="text-white">The word was {selectedWord}.</h3>}
                     {!playable &&  <Button onClick={()=> reset_game()}>Restart</Button>}
                     </Col>
-                    <Col sm={12} md={12} lg={6}>
+                    <Col xs={12} sm={12} md={12} lg={6}>
                         <h3 id="instructions" className="p-4">Choose one of the alphabets below!</h3>
                         <Container>
-                            <Row className="g-0 mx-0 px-0 gx-0" sm={4} md={6} lg={6}>
+                            <Row className="g-0 mx-0 px-0 gx-0" xs={4} sm={4} md={6} lg={6}>
                                 {alphabets.map((letter, i) => 
                                     renderKeyboardButton(letter, i)
                                 )}
