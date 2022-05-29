@@ -29,7 +29,8 @@ function Game() {
     }
 
     function isWin() {
-        return wrongLetters.length < 6;
+        console.log(wrongLetters.length);
+        return wrongLetters.length < 7;
     }
 
     function check_letter(letter) {
@@ -116,8 +117,8 @@ function Game() {
                         maxWidth: "300px"
                         }}/>
                     <Word selectedWord={selectedWord} correctLetters={correctLetters}/>
-                    {!playable && isWin && <h3 className="text-white p-3">Congratulations!</h3>}
-                    {!playable && !isWin && <h3 className="text-white">The word was {selectedWord}.</h3>}
+                    {!playable && isWin() && <h3 className="text-white p-3">Congratulations!</h3>}
+                    {!playable && !isWin() && <h3 className="text-white">The word was {selectedWord}.</h3>}
                     {!playable &&  <Button onClick={()=> reset_game()}>Restart</Button>}
                     </Col>
                     <Col sm={12} md={12} lg={6}>
