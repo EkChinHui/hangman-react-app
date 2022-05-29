@@ -20,7 +20,6 @@ function KeyboardButton({letter, onClick, correctLetters, wrongLetters}) {
                 {letter}
             </div>
         </Col>
-
     )
 }
 

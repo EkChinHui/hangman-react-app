@@ -2,7 +2,6 @@ import {useEffect, useState} from "react"
 
 import './App.css';
 import {Navbar, Container, Nav} from 'react-bootstrap';
-// import SinglePlayer from "./SinglePlayer";
 import Game from "./components/Game"
 import Instructions from "./components/Instructions"
 
@@ -30,7 +29,7 @@ function App() {
         <div className="App">
             <Navbar bg="light" expand="lg">
                 <Container>
-                    <Navbar.Brand href="#home">Hangman</Navbar.Brand>
+                    <Navbar.Brand href="/">Hangman</Navbar.Brand>
                     <Navbar.Toggle aria-controls="basic-navbar-nav"/>
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="me-auto">

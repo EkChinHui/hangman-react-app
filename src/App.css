@@ -1,8 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=B612+Mono&display=swap');
 
+
 .App {
   text-align: center;
   background-color: #98d8ef;
+  min-height: 100vh;
 }
 
 .App-logo {
@@ -77,4 +79,3 @@ span.letter {
 .correct {
   background-color: #85d164;
 }
-

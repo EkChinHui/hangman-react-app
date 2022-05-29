@@ -1,5 +1,5 @@
 import {React, useRef, useState, useEffect} from "react";
-import {Container, Row, Col} from 'react-bootstrap';
+import {Container, Row, Col, Button} from 'react-bootstrap';
 import Word from './Word'
 import KeyboardButton from "./KeyboardButton";
 
@@ -20,6 +20,14 @@ function Game() {
     const [playable, setPlayable] = useState(true)
     const [correctLetters, setCorrectLetters] = useState([])
     const [wrongLetters, setWrongLetters] = useState([])
+
+    function reset_game() {
+        selectedWord = words[Math.floor(Math.random() * words.length)];
+        setPlayable(true);
+        setWrongLetters([]);
+        setCorrectLetters([]);
+        imageRef.current.src = "images/1.jpg"
+    }
 
     function check_letter(letter) {
         if (selectedWord.includes(letter)) {
@@ -86,11 +94,9 @@ function Game() {
         }
     }
 
-    
-
     return (
         <>
-            <Container fluid>
+            <Container fluid className="pb-4">
                 <Row>
                     <Col sm={12} md={12} lg={6}>                
                     <img className="p-3" ref={imageRef} src={"images/1.jpg"} alt="balloon-boy" style={{
@@ -99,7 +105,8 @@ function Game() {
                         maxWidth: "300px"
                         }}/>
                     <Word selectedWord={selectedWord} correctLetters={correctLetters}/>
-                    
+                    {!playable && <h3 className="text-white">The word was {selectedWord}.</h3>}
+                    {!playable &&  <Button onClick={()=> reset_game()}>Restart</Button>}
                     </Col>
                     <Col sm={12} md={12} lg={6}>
                         <h3 id="instructions" className="p-4">Choose one of the alphabets below!</h3>
