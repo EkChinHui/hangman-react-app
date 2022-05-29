@@ -1,9 +1,10 @@
 import React from 'react'
+import KeyboardButton from './KeyboardButton'
 
 function Keyboard() {
     return (
         <div>
-            <h2>Keyboard</h2>
+            <KeyboardButton letter="A"/>
         </div>
     )
 }
