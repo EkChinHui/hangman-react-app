@@ -95,7 +95,8 @@ function Game() {
                     <Col sm={12} md={12} lg={6}>                
                     <img className="p-3" ref={imageRef} src={"images/1.jpg"} alt="balloon-boy" style={{
                         width: "45%",
-                        maxHeight: "100%"
+                        minWidth: "160px",
+                        maxWidth: "300px"
                         }}/>
                     <Word selectedWord={selectedWord} correctLetters={correctLetters}/>
                     
