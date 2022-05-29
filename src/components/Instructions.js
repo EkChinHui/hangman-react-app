@@ -7,7 +7,8 @@ function Instructions() {
             <p className="p-5">
                 Hangman is a simple word guessing game. <br/>
                 Players try to figure out an unknown word by guessing letters. <br/>
-                If too many letters which do not appear in the word are guessed, the player is hanged (and loses). <br/>
+                For every wrong letter you guess, a balloon will pop. <br/>
+                Once all the balloon pops, the game ends and you will have to restart. <br/>
                 You have 7 guesses and can either type or click on the buttons to guess a letter.
             </p>
         </div>
