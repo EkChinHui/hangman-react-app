@@ -7,7 +7,7 @@ const sleep = (milliseconds) => {
     return new Promise(resolve => setTimeout(resolve, milliseconds))
 }
 
-const words = ['hello', 'world']
+const words = ['hello', 'world', 'testing']
 
 // selects a random word from words
 let selectedWord = words[Math.floor(Math.random() * words.length)]
@@ -38,7 +38,7 @@ function Game() {
                 // can't use .push because immutability
                 setWrongLetters(currentLetters => [...currentLetters, letter]);
                 wrongAnswer();
-                if (wrongLetters.length >= 5) {
+                if (wrongLetters.length >= 6) {
                     setPlayable(false)
                     // notify user that they lost
                 }
@@ -79,7 +79,7 @@ function Game() {
         let rotator = imageRef.current,
             dir = 'images/';
          
-        if (num < 22) {
+        if (num < 37) {
             for (let i = 0; i < 5; i++) {
                 console.log(num);
                 rotator.src = dir + num + '.jpg';
