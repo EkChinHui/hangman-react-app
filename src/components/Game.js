@@ -7,7 +7,7 @@ const sleep = (milliseconds) => {
     return new Promise(resolve => setTimeout(resolve, milliseconds))
 }
 
-const words = ['hello', 'world', 'testing']
+const words = ['hello', 'world', 'testing', 'tiktok', 'youth', 'camp', 'programming', 'react', 'android', 'deployment', 'hangman', 'game']
 
 // selects a random word from words
 let selectedWord = words[Math.floor(Math.random() * words.length)]
