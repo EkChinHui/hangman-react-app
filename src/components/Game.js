@@ -108,7 +108,7 @@ function Game() {
 
     return (
         <>
-            <Container fluid className="pb-4">
+            <Container fluid className="pb-4" style={{background: "#9ed8ef"}}>
                 <Row>
                     <Col sm={12} md={12} lg={6}>                
                     <img className="p-3" ref={imageRef} src={"images/1.jpg"} alt="balloon-boy" style={{
