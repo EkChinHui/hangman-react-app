@@ -11,7 +11,6 @@ const words = ['hello', 'world', 'testing']
 
 // selects a random word from words
 let selectedWord = words[Math.floor(Math.random() * words.length)]
-console.log(selectedWord)
 let alphabets = [...'ABCDEFGHIJKLMNOPQRSTUVWXYZ']
 
 
