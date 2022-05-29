@@ -29,6 +29,10 @@ function Game() {
         imageRef.current.src = "images/1.jpg"
     }
 
+    function isWin() {
+        return wrongLetters.length < 6;
+    }
+
     function check_letter(letter) {
         if (selectedWord.includes(letter)) {
             // and not already keyed in 
@@ -36,6 +40,13 @@ function Game() {
                 // adds letter into correct letter 
                 // can't use .push because immutability
                 setCorrectLetters(currentLetters => [...currentLetters, letter]);
+                var currentSet = new Set(correctLetters).add(letter);
+                var correctSet = new Set(selectedWord.split(''));
+                let areSetsEqual = (a, b) => a.size === b.size && [...a].every(value => b.has(value));
+
+                if (areSetsEqual(currentSet, correctSet)) {
+                    setPlayable(false);
+                }
             } else {
                 // notify user that letter has been chosen already
             }
@@ -67,6 +78,7 @@ function Game() {
         }
         window.addEventListener('keydown', handleKeydown);
         return () => window.removeEventListener('keydown', handleKeydown);
+        // eslint-disable-next-line
     }, [correctLetters, wrongLetters, playable]); // function only called when cl, wl and playable are changed
 
     function handleButtonClick(letter) {
@@ -105,7 +117,8 @@ function Game() {
                         maxWidth: "300px"
                         }}/>
                     <Word selectedWord={selectedWord} correctLetters={correctLetters}/>
-                    {!playable && <h3 className="text-white">The word was {selectedWord}.</h3>}
+                    {!playable && isWin && <h3 className="text-white p-3">Congratulations!</h3>}
+                    {!playable && !isWin && <h3 className="text-white">The word was {selectedWord}.</h3>}
                     {!playable &&  <Button onClick={()=> reset_game()}>Restart</Button>}
                     </Col>
                     <Col sm={12} md={12} lg={6}>
